@@ -70,7 +70,7 @@ fun EcoPonto(modifier: Modifier = Modifier) {
         if (page == 1)
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            ){
                 Text(
                     "Tipo",
                     fontWeight = FontWeight.Bold,
@@ -89,67 +89,78 @@ fun EcoPonto(modifier: Modifier = Modifier) {
                     "Escolhe uma apção: ",
                     fontSize = 30.sp
                 )
-            }
-        Row(
-            modifier = Modifier.padding(vertical = 30.dp, horizontal = 30.dp)
-        ) {
-            Button(
-                modifier = Modifier.weight(1F),
-                onClick = { page = 2; option = 1 }) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
+                Row(
+                    modifier = Modifier.padding(vertical = 30.dp, horizontal = 30.dp)
                 ) {
-                    Text(stringResource(id = R.string.um))
-                    Text(stringResource(id = R.string.azul).uppercase())
-                }
-            }
-            Spacer(modifier = Modifier.width(20.dp))
-            Button(
-                modifier = Modifier.weight(1F),
-                onClick = { page = 2; option = 2 }) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(stringResource(id = R.string.dois))
-                    Text(stringResource(id = R.string.amarelo).uppercase())
+                    Button(
+                        modifier = Modifier.weight(1F),
+                        onClick = { page = 2; option = 1 }) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(stringResource(id = R.string.um))
+                            Text(stringResource(id = R.string.azul).uppercase())
+                        }
+                    }
+                    Spacer(modifier = Modifier.width(20.dp))
+                    Button(
+                        modifier = Modifier.weight(1F),
+                        onClick = { page = 2; option = 2 }) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(stringResource(id = R.string.dois))
+                            Text(stringResource(id = R.string.amarelo).uppercase())
 
+                        }
+                    }
                 }
+                Row(
+                    modifier = Modifier.padding(vertical = 30.dp, horizontal = 30.dp)
+                ) {
+                    Button(
+                        modifier = Modifier.weight(1F),
+                        onClick = { page = 3; option = 3 }) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(stringResource(id = R.string.tres))
+                            Text(stringResource(id = R.string.verde).uppercase())
+
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.width(20.dp))
+
+                    Button(
+                        modifier = Modifier.weight(1F),
+                        onClick = { page = 4; option = 4 }) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(stringResource(id = R.string.quatro))
+                            Text(stringResource(id = R.string.laranja).uppercase())
+
+
+                        }
+                    }
+                }
+            } else
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text("Onde Depositar:")
+            Text("Caixa ${message}")
+            Button(onClick = { page = 1; option = 0 }) {
+                Text(text = "Repetir")
+
             }
         }
-        Row(
-            modifier = Modifier.padding(vertical = 30.dp, horizontal = 30.dp)
-        ) {
-            Button(
-                modifier = Modifier.weight(1F),
-                onClick = { page = 3; option = 3 }) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(stringResource(id = R.string.tres))
-                    Text(stringResource(id = R.string.verde).uppercase())
 
-
-                }
-            }
-            Spacer(modifier = Modifier.width(20.dp))
-
-            Button(
-                modifier = Modifier.weight(1F),
-                onClick = { page = 4; option = 4 }) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(stringResource(id = R.string.quatro))
-                    Text(stringResource(id = R.string.laranja).uppercase())
-
-
-                }
-            }
-        }
     }
 }
-
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
