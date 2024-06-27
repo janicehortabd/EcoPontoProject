@@ -4,9 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,9 +21,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.ecopontoproject.ui.theme.EcoPontoProjectTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,7 +64,36 @@ fun EcoPonto(modifier: Modifier = Modifier) {
         else -> "Vazio"
 
     }
-}
+    Column(
+        modifier = modifier,
+    ) {
+        if (page == 1)
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    "Tipo",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp,
+
+                    )
+                Spacer(modifier = Modifier.height(40.dp))
+
+                Text("1-Residuos de Papel e Cartao")
+                Text("2-Embalagens de Plastico")
+                Text("3-Embalagens de Vidro")
+                Text("4-Aparelhos Eletricos")
+
+                Spacer(modifier = Modifier.height(40.dp))
+                Text(
+                    "Escolhe uma apção: ",
+                    fontSize = 30.sp,
+
+
+                    )
+                }
+            }
+    }
 
 
 
