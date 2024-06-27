@@ -72,7 +72,7 @@ fun EcoPonto(modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 Text(
-                    "Tipo",
+                    "Tipo de separação",
                     fontWeight = FontWeight.Bold,
                     fontSize = 30.sp,
 
